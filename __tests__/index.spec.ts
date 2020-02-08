@@ -5,7 +5,7 @@ const wwcrypto = new WWCrypto(data.params.token, data.params.encodingAESKey, dat
 
 it('decrypt message', () => {
   const parsedMessage = wwcrypto.decryptMsg(data.signature, data.params.timestamp, data.params.nonce, data.carrierXML)
-  expect(parsedMessage).toEqual(data.parsedMessage)
+  expect(parsedMessage).toMatchSnapshot()
 })
 
 it('encrypt message', () => {
@@ -37,7 +37,7 @@ it('is decrypt encrypted message', () => {
   })
   const signature = encryptedMsg.match(/<MsgSignature><!\[CDATA\[(.+?)]]><\/MsgSignature>/)[1]
   const decryptedMsg = wwcrypto.decryptMsg(signature, data.params.timestamp, data.params.nonce, encryptedMsg)
-  expect(decryptedMsg).toEqual(data.parsedMessage)
+  expect(decryptedMsg).toMatchSnapshot()
 })
 
 it('calculate signature', () => {
