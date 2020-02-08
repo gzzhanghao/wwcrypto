@@ -7,6 +7,9 @@
   "types": "./lib/index.d.ts",
   "author": "Jason <jason.daurus@gmail.com>",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build:ts": "tsc -d --emitDeclarationOnly --outDir dist",
     "build:js": "rollup -c rollup.config.js",
