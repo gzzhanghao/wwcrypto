@@ -18,7 +18,7 @@ const wwcrypto = new WWCrypto(token, encodingAESKey, receiveId)
 const encryptedMsg = wwcrypto.encryptMsg(message, { timestamp, nonce })
 
 console.log(encryptedMsg)
-// -> '<xml>[...]<Encrypt><![CDATA[...]]></Encrypt></xml>'
+// -> '<xml>[...]</xml>'
 
 const decryptedMsg = wwcrypto.decryptMsg(signature, timestamp, nonce, encryptedMsg)
 
@@ -32,11 +32,9 @@ console.log(decryptedMsg)
 
 __Params:__
 
-- `token` __string__
-- `encodingAESKey` __string__
-- `receiveId` __string__
-
-__Usage:__
+- token `string`
+- encodingAESKey `string`
+- receiveId `string`
 
 初始化加解密库。
 
@@ -44,14 +42,12 @@ __Usage:__
 
 __Params:__
 
-- `signature` __string__
-- `timestamp` __string | number__
-- `nonce` __string | number__
-- `xml` __string__
+- signature `string`
+- timestamp `string | number`
+- nonce `string | number`
+- xml `string`
 
-__Returns: Object__
-
-__Usage:__
+__Returns:__ Object
 
 校验 signature 并解析 XML 消息内容。
 
@@ -59,15 +55,13 @@ __Usage:__
 
 __Params:__
 
-- `message` __string__
-- `options` __Object__
-  - `nonce` __string | number__
-  - `timestamp` __string | number__
-  - `padding` __Buffer__
+- message `string`
+- options `Object`
+  - nonce `string | number`
+  - timestamp `string | number`
+  - padding `Buffer`
 
-__Returns: string__
-
-__Usage:__
+__Returns:__ string
 
 加密并封装消息，返回 XML 内容。可通过 `options` 配置 XML 消息的各类参数以及拼接在明文前的随机字节。
 
@@ -75,11 +69,9 @@ __Usage:__
 
 __Params:__
 
-- `data` __string__
+- data `string`
 
-__Returns: string__
-
-__Usage:__
+__Returns:__ string
 
 解密消息。
 
@@ -87,13 +79,11 @@ __Usage:__
 
 __Params:__
 
-- `data` __string__
-- `options` __Object__
-  - `padding` __Buffer__
+- data `string`
+- options `Object`
+  - padding `Buffer`
 
-__Returns: string__
-
-__Usage:__
+__Returns:__ string
 
 加密消息，返回 base64 编码后的结果。可通过 `options.padding` 指定头部 16 个随机字节。
 
@@ -101,12 +91,10 @@ __Usage:__
 
 __Params:__
 
-- `timestamp` __string | number__
-- `nonce` __string | number__
-- `encryptedMsg` __string__
+- timestamp `string | number`
+- nonce `string | number`
+- encryptedMsg `string`
 
-__Returns: string__
-
-__Usage:__
+__Returns:__ string
 
 计算签名。
