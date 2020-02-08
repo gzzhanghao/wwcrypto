@@ -1,0 +1,35 @@
+{
+  "name": "wwcrypto",
+  "version": "0.1.0",
+  "description": "企业微信加解密库",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "author": "Jason <jason.daurus@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:ts": "tsc -d --emitDeclarationOnly --outDir dist",
+    "build:js": "rollup -c rollup.config.js",
+    "build": "npm run build:ts && npm run build:js",
+    "dev": "rollup -c rollup.config.js -w",
+    "test": "jest",
+    "test:dev": "jest --watch",
+    "prepublish": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^3.16.0",
+    "pkcs7": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
+    "rollup": "^1.31.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "typescript": "^3.7.5"
+  }
+}
