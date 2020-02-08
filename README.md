@@ -32,9 +32,9 @@ console.log(decryptedMsg)
 
 __Params:__
 
-- token `string`
-- encodingAESKey `string`
-- receiveId `string`
+- token: `string`
+- encodingAESKey: `string`
+- receiveId: `string`
 
 初始化加解密库。
 
@@ -42,10 +42,10 @@ __Params:__
 
 __Params:__
 
-- signature `string`
-- timestamp `string | number`
-- nonce `string | number`
-- xml `string`
+- signature: `string`
+- timestamp: `string | number`
+- nonce: `string | number`
+- xml: `string`
 
 __Returns:__ Object
 
@@ -55,11 +55,11 @@ __Returns:__ Object
 
 __Params:__
 
-- message `string`
-- options `Object`
-  - nonce `string | number`
-  - timestamp `string | number`
-  - padding `Buffer`
+- message: `string`
+- options: `Object`
+  - nonce: `string | number`
+  - timestamp: `string | number`
+  - padding: `Buffer`
 
 __Returns:__ string
 
@@ -69,7 +69,7 @@ __Returns:__ string
 
 __Params:__
 
-- data `string`
+- data: `string`
 
 __Returns:__ string
 
@@ -79,9 +79,9 @@ __Returns:__ string
 
 __Params:__
 
-- data `string`
-- options `Object`
-  - padding `Buffer`
+- data: `string`
+- options: `Object`
+  - padding: `Buffer`
 
 __Returns:__ string
 
@@ -91,9 +91,9 @@ __Returns:__ string
 
 __Params:__
 
-- timestamp `string | number`
-- nonce `string | number`
-- encryptedMsg `string`
+- timestamp: `string | number`
+- nonce: `string | number`
+- encryptedMsg: `string`
 
 __Returns:__ string
 
