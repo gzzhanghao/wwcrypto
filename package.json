@@ -1,6 +1,6 @@
 {
   "name": "wwcrypto",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "企业微信加解密库",
   "main": "./lib/index.js",
   "module": "./lib/index.mjs",
